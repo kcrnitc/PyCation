@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PiCation</title>
     <style>
+      h2{
+              
+         color:white;
+}
         /* Basic styling */
        /* Basic styling with background image */
 body {
@@ -23,28 +27,29 @@ body {
 
         
         header {
-            background-color: black;
+            background-color: dark;
             color: #fff;
             padding: 20px;
             text-align: center;
         }
 
         .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
+            max-width: 470px;
+            max-height: 100px
+            margin: 10px 20px;
+            padding: 15px;
+            background-color: black;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
         }
 
         /* Display posted links */
         .posted-links {
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         .posted-link {
-            background-color: #fff;
+            background-color: black;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -74,20 +79,27 @@ body {
         </div>
     </div>
 
-    <script>
-        // JavaScript to handle link creation
-        document.addEventListener("DOMContentLoaded", function () {
-            const postedLinks = document.querySelector(".posted-links");
+   <script>
+    // JavaScript to handle link creation and opening the text file
+    document.addEventListener("DOMContentLoaded", function () {
+        const postedLinks = document.querySelector(".posted-links");
 
-            // Create a new anchor element with a link
-            const linkAnchor = document.createElement("a");
-            linkAnchor.classList.add("posted-link");
-            linkAnchor.href = "https://github.com/kcrnitc/PyCation.git"; // Replace with your link
-            linkAnchor.textContent = "https://github.com/kcrnitc/PyCation.git"; // Replace with your link text
+        // Create a new anchor element with a link
+        const linkAnchor = document.createElement("a");
+        linkAnchor.classList.add("posted-link");
+        linkAnchor.href = "https://example.com/path-to-your-text-file.txt"; // Replace with the URL of your text file
+        linkAnchor.textContent = "https://github.com/kcrnitc/PyCation/blob/main/snakegame.txt"; // Replace with your link text
 
-            // Append the link to the posted links section
-            postedLinks.appendChild(linkAnchor);
+        // Add an event listener to open the text file when the link is clicked
+        linkAnchor.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the link from navigating to the URL
+            window.open(linkAnchor.href, "_blank"); // Open the link in a new tab or window
         });
-    </script>
+
+        // Append the link to the posted links section
+        postedLinks.appendChild(linkAnchor);
+    });
+</script>
+
 </body>
 </html>
